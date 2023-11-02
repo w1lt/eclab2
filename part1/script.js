@@ -1,13 +1,12 @@
-/** @format */
+function verifyPasswords() {
+    // Get the password inputs
+    const password1 = document.getElementById('password1').value;
+    const password2 = document.getElementById('password2').value;
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("nameForm");
-  const welcomeMessage = document.getElementById("welcomeMessage");
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    welcomeMessage.innerHTML = `<p>Welcome, ${name}!</p>`;
-    form.reset();
-  });
-});
+    // Check if passwords meet the criteria
+    if (password1.length < 8 || password1 !== password2) {
+        alert("Passwords must be at least eight characters long and match.");
+    } else {
+        alert("Passwords match!");
+    }
+}
